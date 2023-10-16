@@ -1,0 +1,83 @@
+@keyframes spiner {
+	from {
+		transform: rotate(0turn);
+	}
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+.hide {
+	animation: hide 0.5s forwards;
+}
+
+@keyframes hide {
+	to {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1400px;
+}
+
+.decor {
+	position: absolute;
+	width: 40%;
+	height: 40px;
+	background-color: $main-color;
+	transform: skew(-45deg);
+	&-right {
+		border-top: 2px solid $secondary-color;
+		border-left: 2px solid $secondary-color;
+		bottom: -2px;
+		right: -10%;
+	}
+	&-left {
+		border-bottom: 2px solid $secondary-color;
+		border-right: 2px solid $secondary-color;
+		left: -10%;
+		top: -2px;
+	}
+}
+
+.btn-effect {
+	box-shadow: -2px 2px $secondary-complementary-color, 5px -5px $secondary-color;
+	transition: box-shadow 0.5s;
+	&:hover {
+		box-shadow: 2px -2px $secondary-complementary-color, -5px 5px $secondary-color;
+	}
+}
+
+.sorted {
+	display: none;
+}
+
+.sorted-start {
+	animation: sortedhide 0.5s forwards;
+}
+
+@keyframes sortedhide {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.sorted-back {
+	animation: sortedshow 0.5s forwards;
+}
+
+@keyframes sortedshow {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

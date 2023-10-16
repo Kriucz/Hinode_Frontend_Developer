@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/218037cbad.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/main.css">
+
+</head>
+
+<body>
+
+
+    <section class="loading-screen">
+        <div class="loading-screen__img">
+            <img src="img/Logo.jpg" alt="Logo my project Yatagarasu in a triangle">
+            <p>Loading...</p>
+        </div>
+        <div class="loading-screen__spiner"></div>
+    </section>
+
+
+    <nav>
+        <button class="navigation-button ">
+            <div class="navigation-button__elements exit">
+            </div>
+        </button>
+        <div class="background"></div>
+        <ul class="navigation">
+            <li class="navigation-item"><a class="navigation-item__link" href="#">Home</a></li>
+            <li class="navigation-item"><a class="navigation-item__link" href="#about">About</a></li>
+            <li class="navigation-item"><a class="navigation-item__link" href="#skills">Skills</a></li>
+            <li class="navigation-item"><a class="navigation-item__link" href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+    <header class="header">
+        <div class="header__blur"></div>
+        <h1 class="header__title">Hinode <span>日の出</span></h1>
+        <p class="header__text"> Frontend Developer</p>
+    </header>
+    <main>
+        <section class="about " id="about">
+            <div class="wrapper about--edit">
+                <div class="about__img"><img class="btn-effect" src="./img/Karasu_front2.png" alt="Moja twarz XD"></div>
+                <div class="about__text">
+                    <h2 class="about__text--title">About me</h2>
+                    <p class="about__text--main">I am a junior front-end developer. My adventure with programming began
+                        at
+                        the end of my studies. Previously, I was involved in creating 2D and 3D graphics. I have always
+                        been
+                        a creative person who loves to create and solve problems. This is why I liked creating
+                        websites.<br>
+                        Are you still reading?<br>That's nice, so let me tell you a little more about myself.
+                        I am a person who, when I find something that interests me, starts checking everything to know
+                        more
+                        about it, so sometimes I get interested in something and go to sleep when I was supposed to get
+                        up.
+                        Well, it's just a coincidence. <br>
+                        I also often consider many options for solutions, which is sometimes problematic because I think
+                        about certain things for too long and sometimes it takes too much time. <br>
+                        Enough about me, take a look at what's below, my projects are probably more important to you,
+                        but of course if you want to know more about me just ask.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <div class="decor decor-left"></div>
+            <div class="decor decor-right"></div>
+            <div class="skills__tab">
+                <div class="skill"><i class="fa-brands fa-html5"></i></div>
+                <div class="skill"><i class="fa-brands fa-css3-alt"></i></div>
+                <div class="skill"><i class="fa-brands fa-sass"></i></div>
+                <div class="skill"><i class="fa-brands fa-bootstrap"></i></div>
+                <div class="skill"><i class="fa-brands fa-js"></i></div>
+                <div class="skill"><i class="fa-brands fa-react"></i></div>
+            </div>
+        </section>
+
+        <section class="projects wrapper" id="projects">
+            <div class="projects-window">
+                <div class="projects-buttons">
+                    <button class="projects-buttons__filter btn-effect" id="all-projects">All Projects</button>
+                    <button class="projects-buttons__filter btn-effect" id="html-css">HTML/CSS</button>
+                    <button class="projects-buttons__filter btn-effect" id="js">JavaScript</button>
+                    <button class="projects-buttons__filter btn-effect" id="react">React</button>
+                </div>
+                <div class="projects-menu">
+
+
+                    <div class="projects-menu__card css">
+                        <img class="projects-menu__card-img" src="./img/Esdavida.JPG"
+                            alt="Miniaturka strony Espirito da Vida">
+                        <div class="projects-menu__card-text">
+                            <h3 class="projects-menu__card-text-title">Espirito da Vida</h3>
+                            <p class="projects-menu__card-text-paragraph">Website (business card) created for a client
+                                dealing with holistic therapy</p>
+                        </div>
+                        <a class="projects-menu__card-link btn-effect" href="https://esdavida.pl" target="_blank">Go to
+                            Page
+                            <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="projects-menu__card css">
+                        <img class="projects-menu__card-img" src="./img/Gardern_w.JPG"
+                            alt="Miniaturka strony Espirito da Vida">
+                        <div class="projects-menu__card-text">
+                            <h3 class="projects-menu__card-text-title">GardernWork</h3>
+                            <p class="projects-menu__card-text-paragraph">This is my first website created for an
+                                example client in the gardening industry using bootstrap </p>
+                        </div>
+                        <a class="projects-menu__card-link btn-effect" href="https://kriucz.github.io/GardenWork/"
+                            target="_blank">Go to Page
+                            <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="projects-menu__card js css">
+                        <img class="projects-menu__card-img" src="./img/GiardDesign.JPG"
+                            alt="Miniaturka strony Espirito da Vida">
+                        <div class="projects-menu__card-text">
+                            <h3 class="projects-menu__card-text-title">GiardDesign</h3>
+                            <p class="projects-menu__card-text-paragraph">It was created in the recruitment process for
+                                the adRespect.pl agency. The code is mine, but the graphic design belongs to
+                                adRespect.pl.</p>
+                        </div>
+                        <a class="projects-menu__card-link btn-effect"
+                            href="https://kriucz.github.io/GiardDesign-recruitment-task/" target="_blank">Go to Page
+                            <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="projects-menu__card  js css">
+                        <img class="projects-menu__card-img" src="./img/Hotel.JPG"
+                            alt="Miniaturka strony Espirito da Vida">
+                        <div class="projects-menu__card-text">
+                            <h3 class="projects-menu__card-text-title">Hotel pod złamaną sosną</h3>
+                            <p class="projects-menu__card-text-paragraph">An example website created for a hotel in the
+                                mountains</p>
+                        </div>
+                        <a class="projects-menu__card-link btn-effect"
+                            href="https://kriucz.github.io/Hotel-Pod-Z-aman-Sosn-/" target="_blank">Go to Page
+                            <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="projects-menu__card react">
+                        <img class="projects-menu__card-img" src="./img/RPG.JPG"
+                            alt="Miniaturka strony Espirito da Vida">
+                        <div class="projects-menu__card-text">
+                            <h3 class="projects-menu__card-text-title">Hero Creator</h3>
+                            <p class="projects-menu__card-text-paragraph">Character creator in React. Project under
+                                development. currently needs to be downloaded for testing</p>
+                        </div>
+                        <a class="projects-menu__card-link btn-effect" href="https://github.com/Kriucz/RPG-Hero-Creator"
+                            target="_blank">Go to Page
+                            <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer ">
+        <div class="decor decor-left"></div>
+        <div class="decor decor-right"></div>
+        <div class="footer__img"><img src="./img/Logo.jpg" alt="Logo my project Yatagarasu in a triangle"></div>
+        <div class="footer__links">
+            <a href="https://github.com/Kriucz" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/adrian-borowiec-b89bb9214/" target="_blank">LinkedIn</a>
+        </div>
+        <p class="footer__bottom-text">&copy; <span class="footer__year"></span> |日の出 Hinode site</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

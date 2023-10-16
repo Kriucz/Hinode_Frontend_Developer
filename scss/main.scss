@@ -1,0 +1,453 @@
+@import './_colors';
+@import './modules';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	color: rgb(231, 231, 231);
+	background-color: $main-color;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+span {
+	font-size: 1rem;
+}
+
+// === LOADING ===
+
+.loading-screen {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: $main-color;
+	z-index: 400;
+	transition: opacity 0.5s;
+	&__img {
+		width: 200px;
+		height: 200px;
+		transform: translateY(-20%);
+		text-align: center;
+	}
+	&__spiner {
+		width: 60px;
+		height: 60px;
+		border: 10px solid $secondary-complementary-color;
+		border-top-color: $secondary-color;
+		border-radius: 50%;
+		animation: spiner 1s ease infinite;
+	}
+}
+
+// === NAVIGATION ===
+
+.navigation {
+	position: fixed;
+	display: flex;
+	justify-content: space-evenly;
+	z-index: 50;
+	&-item {
+		list-style-type: none;
+		display: flex;
+		&__link {
+			text-transform: uppercase;
+			text-decoration: none;
+			color: $secondary-complementary-color;
+			border-bottom: 2px solid transparent;
+			transition: border 0.4s;
+			&::first-letter {
+				color: $secondary-color;
+				font-weight: bold;
+			}
+			&:hover {
+				border-bottom: 2px solid $secondary-color;
+			}
+		}
+	}
+}
+
+// === HEADER ===
+
+.header {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	background-image: url(../img/tokyo_S.jpg);
+	background-position: center;
+	background-size: cover;
+	z-index: 1;
+	&__blur {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		backdrop-filter: blur(4px);
+	}
+	&__title {
+		padding: 20px;
+		font-size: 4rem;
+		z-index: 2;
+	}
+	&__text {
+		font-size: 1.5rem;
+		z-index: 2;
+	}
+}
+
+//  === ABOUT ===
+
+.about {
+	border-top: 2px solid $secondary-color;
+
+	&--edit {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		padding: 6rem 0;
+	}
+	&__img {
+		margin: 2rem;
+		min-width: 200px;
+		max-width: 400px;
+	}
+	&__text {
+		display: flex;
+		flex-direction: column;
+		margin: 1rem;
+		&--title {
+			margin-bottom: 2rem;
+			font-size: 1.8rem;
+			text-transform: uppercase;
+			&::first-letter {
+				color: $secondary-color;
+				font-weight: bold;
+			}
+		}
+		&--main {
+			padding: 1rem;
+			box-shadow: inset 0px 0px 15px rgb(0, 0, 0);
+			text-align: justify;
+			font-size: 1.2rem;
+		}
+	}
+}
+
+// === SKILLS ===
+
+.skills {
+	position: relative;
+	height: 200px;
+	background-image: url(../img/background_1920.jpg);
+	text-align: center;
+	border-top: 2px solid $secondary-color;
+	border-bottom: 2px solid $secondary-color;
+	background-attachment: fixed;
+	overflow: hidden;
+	&__tab {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 100%;
+	}
+}
+.skill {
+	font-size: 3rem;
+	color: $secondary-color;
+}
+
+//  === PROJECTS ===
+
+.projects {
+	padding: 6rem 0;
+	&-window {
+		margin: 2rem;
+		.projects-buttons {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+			align-items: center;
+			margin-bottom: 5rem;
+			padding: 1rem;
+			border: 2px solid $secondary-color;
+			background-image: url(../img/background_1920.jpg);
+			background-position: center;
+			background-size: cover;
+			background-attachment: fixed;
+			box-shadow: 0px 0px 10px black;
+			&__filter {
+				margin: 0.5rem;
+				padding: 1rem 1.5rem;
+				font-size: 1rem;
+				background-color: $main-color;
+				color: $secondary-complementary-color;
+
+				border: 2px transparent;
+				cursor: pointer;
+			}
+		}
+		.projects-menu {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			box-shadow: inset 0px 0px 15px rgb(0, 0, 0);
+			&__card {
+				position: relative;
+				margin: 1rem;
+				overflow: hidden;
+				width: 250px;
+				height: 270px;
+
+				&:hover .projects-menu__card-text {
+					opacity: 0;
+					visibility: hidden;
+				}
+				&:hover .projects-menu__card-link {
+					opacity: 1;
+					visibility: visible;
+				}
+				&-img {
+					height: 100%;
+				}
+				&-text {
+					position: absolute;
+					text-align: center;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					top: 50%;
+					left: 50%;
+					width: 100%;
+					height: 100%;
+					background-color: #0000009c;
+					transform: translate(-50%, -50%);
+					box-shadow: inset 0px 0px 50px rgb(0, 0, 0);
+					transition: opacity 0.5s, visibility 0.5s;
+					&-title {
+						font-size: 1.5rem;
+						padding: 1rem;
+					}
+					&-paragraph {
+						padding: 0 1rem 1rem 1rem;
+					}
+				}
+				&-link {
+					opacity: 0;
+					visibility: hidden;
+					position: absolute;
+					bottom: 0.8rem;
+					left: 50%;
+					width: 70%;
+					padding: 1rem;
+					text-align: center;
+					background-color: rgba(0, 0, 0, 0.747);
+					text-decoration: none;
+					transform: translateX(-50%);
+					color: $secondary-complementary-color;
+					transition: opacity 0.5s, visibility 0.5s, box-shadow 0.5s;
+				}
+			}
+		}
+	}
+}
+
+//  === FOOTER ===
+
+.footer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+	border-top: 2px solid $secondary-color;
+	border-bottom: 2px solid $secondary-color;
+	overflow: hidden;
+	&__img {
+		width: 100px;
+		height: auto;
+	}
+	&__links {
+		margin-bottom: 2rem;
+		a {
+			text-decoration: none;
+			color: $secondary-color;
+			padding: 1rem;
+			&:hover {
+				color: $secondary-complementary-color;
+			}
+		}
+	}
+}
+
+// === MEDIA Q ===
+
+// +MAX+
+
+@media (max-width: 767px) {
+	.navigation-button {
+		position: fixed;
+		width: 3rem;
+		height: 3rem;
+		top: 2rem;
+		right: 2rem;
+		background-color: transparent;
+		border: transparent;
+		z-index: 51;
+		cursor: pointer;
+		&__elements {
+			position: absolute;
+			top: 30%;
+			left: 13%;
+			background-color: $secondary-color;
+			height: 0.2rem;
+			width: 2rem;
+			transform: skewX(45deg);
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				display: inline-block;
+				height: 100%;
+			}
+			&::after {
+				width: 2rem;
+				top: 0.5rem;
+				right: 0.5rem;
+				background-color: $secondary-color;
+			}
+			&::before {
+				width: 2rem;
+				top: 1rem;
+				right: 1rem;
+				background-color: $secondary-complementary-color;
+			}
+		}
+	}
+
+	.navigation {
+		flex-direction: column;
+		align-items: center;
+		height: 100vh;
+		width: 100vw;
+		background-image: url(../img/background.jpg);
+		background-size: cover;
+		transform: translateX(110%);
+		transition: transform 0.5s;
+		&-item {
+			&__link {
+				font-size: 1.5rem;
+				padding: 1.2rem 2rem;
+			}
+		}
+	}
+	.show {
+		transform: translateX(0);
+	}
+}
+
+//  -MIN-
+@media (min-width: 576px) {
+	.projects {
+		&-window {
+			.projects-menu {
+				&__card {
+					width: 300px;
+					height: 320px;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.navigation-button {
+		display: none;
+	}
+
+	.header {
+		background-image: url(../img/tokyo_L.jpg);
+	}
+
+	.background {
+		position: fixed;
+		right: -40px;
+		width: 55%;
+		height: 57px;
+		transform: skew(45deg);
+		background-image: url(../img/background_1920.jpg);
+		background-position: 0 5%;
+		z-index: 19;
+		&::before,
+		&::after {
+			content: '';
+			position: relative;
+			display: inline-block;
+			height: 100%;
+		}
+		&::after {
+			width: 10px;
+			left: -20px;
+			background-color: $secondary-color;
+		}
+		&::before {
+			width: 5px;
+			left: -30px;
+			background-color: $secondary-complementary-color;
+		}
+	}
+	.navigation {
+		align-items: center;
+		padding: 0rem 4rem;
+		right: 0;
+		width: 50%;
+		overflow: hidden;
+		&-item {
+			&__link {
+				padding: 1.2rem 1.2rem;
+			}
+		}
+	}
+
+	// ABOUT
+
+	.about {
+		&--edit {
+			flex-direction: row;
+		}
+		&__img {
+			min-width: 200px;
+		}
+		&__text {
+			&--title {
+				font-size: 2rem;
+			}
+			&--main {
+				font-size: 1.2rem;
+			}
+		}
+	}
+
+	.skill {
+		font-size: 4rem;
+	}
+}
